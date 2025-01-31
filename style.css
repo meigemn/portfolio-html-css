@@ -1,26 +1,114 @@
+/* ----------------------background--------- */
+
+body {
+    /* margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
+    overflow: auto;
+    background: linear-gradient(315deg, rgb(204, 192, 203) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 30s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+/* ----------------------------------------------- */
 *{
     margin:0;
     padding:0;
+    box-sizing: border-box;
+}
+/* Se desplaza suavemente por la pagina */
+html {
+    scroll-behavior: smooth;
 }
 body{
+    display: flex;
+    flex-direction: column;
     background-color: #ccc;
     font-family: sans-serif;
 }
+/* ---------estilos nav--------- */
+nav{
+    width: 100%;
+    height: 700px;
+    display: flex;
+}
 ul{
-    width: 50%;
+    width: 100%;
     position: absolute;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
     display: flex;
-    margin:0;
-    padding:0;
+    flex-direction: row;
+
+    align-content: center;
+    justify-content: center;
 }
 ul li{
     list-style:none;
     margin:0 5px;
 }
-/* transicion al desplegarse */
+
 ul li a .fa
 {
     font-size:40px;
@@ -93,4 +181,113 @@ ul li:hover a:before{
 }
 ul li:hover a:after{
     background:#e74c3c;
+}
+#sobre-mi{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+   /*  border: 2px solid #000; */
+}
+#sobre-mi #texto-sobre-mi{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+   /*  border: 2px solid #000; */
+}
+#sobre-mi #imagen-sobre-mi{
+    background-color: #d7f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    padding: 100px;
+    border: 20px solid #000;
+    border-radius: 50%;
+    
+}
+/* ---------------animacion nombre--------------- */
+
+.code{
+    height: 40px;
+    /* position: absolute; */
+/*     top: 50%;
+    left: 50%; */
+   /*  transform: translateX(-50%) translateY(-50%); */
+}
+.code{
+    text-shadow: 1px 1px #333 ; 
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+.code span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: #6495ed;
+    /* display: inline-block; */
+    transition: all 0.5s;
+    animation:animate 2s infinite;
+}
+.code span:nth-child(1){
+    animation-delay: 3.0s;
+}
+.code span:nth-child(2){
+    animation-delay: 5.0s;
+}
+.code span:nth-child(3){
+    animation-delay: 7.0s;
+}.code span:nth-child(4){
+    animation-delay: 0.4s;
+}
+.code span:nth-child(5){
+    animation-delay: 0.5s;
+}
+.code span:nth-child(6){
+    animation-delay: 0.6s;
+}
+.code span:nth-child(7){
+    animation-delay: 0.7s;
+}
+.code span:nth-child(8){
+    animation-delay: 0.8s;
+}
+.code span:nth-child(9){
+    animation-delay: 0.9s;
+}
+.code span:nth-child(10){
+    animation-delay: 0.10s;
+}
+.code span:nth-child(11){
+    animation-delay: 0.11s;
+}
+.code span:nth-child(12){
+    animation-delay: 0.12s;
+}
+
+@keyframes animate{
+    0%{
+        color: #f28846;
+        transform: translateY(0);
+        margin-left: 0;
+    
+    }
+    25%{
+        color: #1aecbb;
+        transform: translateY(-15);
+        margin-left: 10px;
+    }
+    100%{
+        color: #de3163;
+        transform: translateY(0);
+        margin-left: 0;
+    }
+
 }
