@@ -1,11 +1,12 @@
 /* ----------------------background--------- */
 
 body {
+    display: flex;
     /* margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
     overflow: auto;
-    background: linear-gradient(315deg, rgb(204, 192, 203) 50%, rgba(60,132,206,1) 70%, rgb(188, 213, 212) 80%, rgba(255,25,25,1) 98%);
-    animation: gradient 30s ease infinite;
+    background: linear-gradient(315deg, rgb(204, 192, 203) 20%, rgba(60,132,206,1) 40%, rgb(188, 213, 212) 60%, rgba(255,25,25,1) 100%);
+    animation: gradient 20s ease infinite;
     background-size: 400% 400%;
     background-attachment: fixed;
     padding: 100px;
@@ -185,26 +186,16 @@ ul li:hover a:after{
 }
 #sobre-mi{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-top: 200px;
     align-items: center;
     width: 100%;
     height: 700px;
-     
 }
-#sobre-mi #texto-sobre-mi{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 170px;
-    padding: 50px;
-    border: 2px solid #99898958;
-    background-color: #d8d0d016;
-    border-radius: 8px;
-}
+
 #sobre-mi #imagen-sobre-mi{
+    margin-top: 10px;
     background-color: #d7f2f2;
     display: flex;
     flex-direction: column;
@@ -215,6 +206,46 @@ ul li:hover a:after{
     padding: 100px;
     border: 1px solid #000;
     border-radius: 50%;
+    background-image: url(images/foto_perfil.png);
+    background-size: cover;
+    
+}
+/* animacion maquina de escribir */
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes blink {
+    5% {
+        border-color: transparent;
+    }
+}
+.maquina-escribir {
+    animation: typing 6s steps(100, end), blink 0.75s step-end infinite;
+}
+#texto-sobre-mi{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 270px;
+    background-color: #d8d0d016;
+    font-family: monospace;
+    overflow: hidden;
+    /* border-right: 3px solid black; */
+    white-space: wrap;
+    
+}
+#estadisticas_lenguajes img{
+    width: 100%;
+    border-radius: 10px;
+    
     
 }
 
@@ -271,8 +302,7 @@ ul li:hover a:after{
     animation-delay: 0.12s;
 
 }
-
-@keyframes animate{
+    @keyframes animate{
     0%{
         color: #fcfcfc;
         transform: translateY(0);
@@ -363,4 +393,116 @@ ul li:hover a:after{
 .tarjeta-individual:hover{
     transform: scale(1.1);
     cursor: pointer;
+}/* --------Formulario - redes------- */
+#formulario-redes {
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+    
 }
+/* ---------------contacto--------------- */
+#contacto {
+    
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+#contacto h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilos para los grupos de formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Estilos para el botón de enviar */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #30b300;
+}
+
+/* Estilos para el enfoque en los campos */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#redes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30px;
+}
+#redes svg {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+/* Primer SVG: Gira hacia la derecha */
+#redes a:nth-child(1):hover svg {
+    transform: rotate(15deg); /* Gira 15 grados a la derecha */
+}
+
+/* Segundo SVG: Gira hacia la izquierda */
+#redes a:nth-child(2):hover svg {
+    transform: rotate(-15deg); /* Gira 15 grados a la izquierda */
+}
+
+/* Tercer SVG: Gira hacia arriba */
+#redes a:nth-child(3):hover svg {
+    transform: rotate(15deg); /* Gira 20 grados en el eje X (hacia arriba) */
+}
+#redes a:active{
+    transform: translateY(2px); /* Mueve el enlace hacia abajo */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduce la sombra para simular hundimiento */
+}
+
