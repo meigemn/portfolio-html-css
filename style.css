@@ -200,7 +200,7 @@ ul li:hover a:after{
     width: 50%;
     height: 170px;
     padding: 50px;
-    border: 2px solid #998989;
+    border: 2px solid #99898958;
     background-color: #d8d0d016;
     border-radius: 8px;
 }
@@ -213,7 +213,7 @@ ul li:hover a:after{
     width: 300px;
     height: 300px;
     padding: 100px;
-    border: 20px solid #000;
+    border: 1px solid #000;
     border-radius: 50%;
     
 }
@@ -293,14 +293,35 @@ ul li:hover a:after{
 
 }
 
-/* ----------------tarjetas--------------- */
+/* ----------------portfolio - tarjetas--------------- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+#portfolio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   
+}
 
+
+#portfolio h1{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    margin-right: 70px;
+} 
 .tarjetas{
+    
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 }
 .tarjetas .glass{
     position: relative;
@@ -338,4 +359,8 @@ ul li:hover a:after{
 .tarjetas .glass i{
     color: #fff;
     font-size: 4em;
+}
+.tarjeta-individual:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
