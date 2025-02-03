@@ -163,7 +163,7 @@ ul li a:after{
     transform: 0.5s;
     transform: rotate(0deg) skewX(-45deg);
 }
-/* !No funciona al presionar */
+
 nav li:active {
     transform: translateY(4px); /* Efecto al presionar */
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.5);
@@ -191,7 +191,7 @@ ul li:hover a:after{
     margin-top: 200px;
     align-items: center;
     width: 100%;
-    height: 700px;
+    height: 800px;
 }
 
 #sobre-mi #imagen-sobre-mi{
@@ -221,11 +221,14 @@ ul li:hover a:after{
     }
 }
 @keyframes blink {
-    5% {
+    50% {
         border-color: transparent;
     }
 }
 .maquina-escribir {
+    
+    
+    border-right: 1px solid black; /* Añade un borde derecho para simular el cursor */
     animation: typing 6s steps(100, end), blink 0.75s step-end infinite;
 }
 #texto-sobre-mi{
@@ -312,7 +315,7 @@ ul li:hover a:after{
     25%{
         /* color: #1aecbb; */
         transform: translateY(-15);
-        margin-left: 10px;
+        margin-left: 5px;
     }
     100%{
         color: #000000;
@@ -345,6 +348,7 @@ ul li:hover a:after{
     font-size: 3em;
     margin-right: 70px;
 } 
+
 .tarjetas{
     
     position: relative;
@@ -366,12 +370,13 @@ ul li:hover a:after{
     align-items: center;
     transition: 0.5s;
     border-radius: 10px;
-    margin: 0 -45px;
+    /* margin: 0 10px !important; */
+    margin: 0 -45px !important;
     transform: rotate(calc(var(--r) * 1deg));
 }
 .tarjetas:hover .glass{
     transform: rotate(0deg);
-    margin: 0 20px;
+    margin: 0 6px !important;
 }
 .tarjetas .glass::before{
     content: attr(data-text);
@@ -383,6 +388,7 @@ ul li:hover a:after{
     display: flex;
     justify-content: center;
     align-items: center;
+    
     color: #fff;
     
 }
@@ -395,28 +401,31 @@ ul li:hover a:after{
     cursor: pointer;
 }/* --------Formulario - redes------- */
 #formulario-redes {
-    
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 500px;
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Ajusta este valor según sea necesario */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 20px;
+    background-color: #fff;
+    background-image: url(images/fondo_formulario.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 /* ---------------contacto--------------- */
 #contacto {
-    
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 500px;
+    margin: 0 auto; /* Centra el formulario dentro del contenedor */
 }
 
 #contacto h2 {
@@ -506,3 +515,166 @@ button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduce la sombra para simular hundimiento */
 }
 
+/* Media query para pantallas pequeñas (ej: iPhone SE) */
+/* Media query para pantallas pequeñas (ej: iPhone SE) */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    /* NAVEGACION RESPONSIVE */
+    nav {
+        height: auto;
+        margin-top: 50px;
+    }
+
+    ul {
+        flex-direction: column;
+        position: static;
+        transform: none;
+        gap: 20px;
+    }
+
+    ul li a {
+        transform: none !important;
+        width: 100%;
+        height: 60px;
+        box-shadow: none !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+        transition: all 0.3s ease !important;
+    }
+
+    ul li a:hover {
+        transform: none !important;
+        background: #cf4434 !important;
+    }
+
+    ul li a span {
+        position: relative !important;
+        top: auto !important;
+        display: inline-block !important;
+        margin-left: 10px;
+        opacity: 1 !important;
+    }
+     /* Eliminar pseudo-elementos en móvil */
+     ul li a::before,
+     ul li a::after {
+         display: none !important;
+     }
+ 
+     /* Eliminar sombras residuales */
+     ul li a {
+         box-shadow: none !important;
+     }
+ 
+     /* Ajustar hover solo para color de fondo */
+     ul li:hover a {
+         background: #cf4434 !important;
+         transform: none !important;
+     }
+
+    /* SOBRE MI RESPONSIVE */
+    #sobre-mi {
+        margin-top: 100px;
+        height: auto;
+        gap: 40px;
+    }
+
+    .maquina-escribir {
+        white-space: normal;
+        overflow: visible;
+        animation: none;
+        border-right: none;
+    }
+
+    #texto-sobre-mi {
+        height: auto !important;
+        min-height: 400px;
+        padding: 15px;
+        overflow: visible !important;
+    }
+
+    .maquina-escribir p {
+        margin: 15px 0;
+    }
+
+    #imagen-sobre-mi {
+        width: 200px !important;
+        height: 200px !important;
+        padding: 50px !important;
+    }
+    #nombre-sobre-mi {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    
+
+    /* PORTFOLIO RESPONSIVE */
+    #portfolio {
+        height: auto;
+        padding: 50px 0;
+        width: 100vw;
+        margin-left: -20px;
+    }
+
+    #portfolio h1 {
+        margin-right: 0;
+        font-size: 2em;
+        text-align: center;
+        width: 100%;
+    }
+
+    .tarjetas {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    .tarjetas .glass {
+        transform: none !important;
+        margin: 0 !important;
+        width: 150px;
+        height: 180px;
+    }
+
+    /* FORMULARIO-REDES RESPONSIVE */
+    #formulario-redes {
+        flex-direction: column;
+        gap: 40px;
+        margin: 20px auto;
+        width: 100% !important;
+        padding: 20px !important;
+    }
+
+    #contacto {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    #redes {
+        margin-left: 0;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    #redes svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Ajustes finales formulario */
+    .form-group input, 
+    .form-group textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
