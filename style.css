@@ -1,5 +1,8 @@
 /* ----------------------background--------- */
+a{
+    text-decoration: none;
 
+}
 body {
     display: flex;
     /* margin: auto;
@@ -358,21 +361,21 @@ ul li:hover a:after{
     flex-direction: row;
 }
 .tarjetas .glass{
-    position: relative;
-    width: 200px;
-    height: 240px;
+    align-items: center;
     background: linear-gradient(#fff2,transparent);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    position: relative;
     box-shadow: 0 25 25px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
     display: flex;
+    width: 200px;
+    height: 240px;
     justify-content: center;
-    align-items: center;
     transition: 0.5s;
-    border-radius: 10px;
-    /* margin: 0 10px !important; */
-    margin: 0 -45px !important;
     transform: rotate(calc(var(--r) * 1deg));
+    margin: 0 -45px !important;
+    /* margin: 0 10px !important; */
 }
 .tarjetas:hover .glass{
     transform: rotate(0deg);
@@ -397,7 +400,7 @@ ul li:hover a:after{
     font-size: 4em;
 }
 .tarjeta-individual:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
 }/* --------Formulario - redes------- */
 #formulario-redes {
