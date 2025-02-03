@@ -209,7 +209,7 @@ ul li:hover a:after{
     padding: 100px;
     border: 1px solid #000;
     border-radius: 50%;
-    background-image: url(images/foto_perfil.png);
+    background-image: url(assets/images/foto_perfil.png);
     background-size: cover;
     
 }
@@ -413,12 +413,13 @@ ul li:hover a:after{
     margin: 0 auto; /* Centra el contenedor en la página */
     padding: 20px;
     background-color: #fff;
-    background-image: url(images/fondo_formulario.avif);
+    background-image: url(assets/images/fondo_formulario.avif);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
 }
 /* ---------------contacto--------------- */
 #contacto {
